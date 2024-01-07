@@ -1,0 +1,33 @@
+<form (ngSubmit)="addMovie()" [formGroup]="movieForm" class="container form-horizontal">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <div class="alert alert-danger" [hidden]="!(movieForm.controls.name.invalid && movieForm.controls.name.touched)">Name is required</div>
+    </div>
+    <div class="form-group">
+        <label for="image">Image URL</label>
+        <input type="text" class="form-control" formControlName="image">
+        <div class="alert alert-danger" [hidden]="!(movieForm.controls.image.invalid && movieForm.controls.image.touched)">Image URL is required</div>
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" formControlName="genre">
+        <div class="alert alert-danger" [hidden]="!(movieForm.controls.genre.invalid && movieForm.controls.genre.touched)">Genre is required</div>
+    </div>
+    <div class="form-group">
+        <label for="releaseYear">Release Year</label>
+        <input type="text" class="form-control" formControlName="releaseYear">
+        <div class="alert alert-danger" [hidden]="!(movieForm.controls.releaseYear.invalid && movieForm.controls.releaseYear.touched)">Release Year is required</div>
+    </div>
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="text" class="form-control" formControlName="rating">
+        <div class="alert alert-danger" [hidden]="!(movieForm.controls.rating.invalid && movieForm.controls.rating.touched)">Rating is required</div>
+    </div>
+    <div class="form-group">
+        <label for="storyline">Story Line</label>
+        <textarea class="form-control" formControlName="storyline" rows="5"> </textarea>
+        <div class="alert alert-danger" [hidden]="!(movieForm.controls.storyline.invalid && movieForm.controls.storyline.touched)">Story Line is required</div>
+    </div>
+    <button type="submit" [disabled]="movieForm.invalid">Add</button>
+</form>
